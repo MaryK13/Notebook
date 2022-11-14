@@ -1,0 +1,63 @@
+<div class="notebook-container">
+  <div class="breadcrumb-row">
+    <div class="back-button">
+      <mat-icon class="material-icons-round" (click)="back()">arrow_back_ios_rounded</mat-icon>
+    </div>
+    <div class="breadcrumb-label" (click)="back()">Назад</div>
+  </div>
+
+  <div class="notebook-table-block" *ngIf="notesTableDataSource">
+    <mat-table [dataSource]="notesTableDataSource" matSort (matSortChange)="tableSortChange($event)" class="notebook-table">
+      <ng-container matColumnDef="notebook_text">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Записи</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="note-txt">
+            {{row.notebook_text}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Дата</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="date-txt">
+            {{row.date}}
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Удаление</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button
+            mat-button
+            (click)="delete(row.id)"
+          >
+            <div class="delete-btn">
+              <mat-icon>delete</mat-icon>
+              <span>Удалить</span>
+            </div>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="show">
+        <mat-header-cell *matHeaderCellDef>Просмотр</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button
+            mat-button
+            (click)="show(row.id)"
+          >
+            <div class="show-btn">
+              <mat-icon>visibility</mat-icon>
+              <span>Просмотреть</span>
+            </div>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="notesColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: notesColumns"></mat-row>
+    </mat-table>
+  </div>
+</div>

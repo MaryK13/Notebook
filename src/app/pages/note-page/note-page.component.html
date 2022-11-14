@@ -1,0 +1,21 @@
+<div class="notebook-container">
+  <div class="breadcrumb-row">
+    <div class="back-button">
+      <mat-icon class="material-icons-round" (click)="back()">arrow_back_ios_rounded</mat-icon>
+    </div>
+    <div class="breadcrumb-label" (click)="back()">Назад</div>
+  </div>
+
+  <div class="notebook-note-wrapper">
+    <div class="notebook-note-block">
+      <div class="note-create-date">
+        <span class="note-create-date-txt">Дата создания: </span>
+        {{note.date}}
+      </div>
+      <div class="separator"></div>
+      <div class="note-text">
+        {{note.notebook_text}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+.notebook-container {
+  gap: 25px;
+  align-items: flex-start;
+
+  .notebook-table-block {
+    width: 100%;
+
+    .notebook-table {
+      border: 1px solid #228B22FF;
+
+      .mat-header-row {
+        display: flex;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        color: #0d5407;
+      }
+
+      .mat-row {
+        line-height: 25px;
+        height: 45px;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .mat-column-notebook_text {
+        flex: 1 0 45%;
+        margin: 0 24px 0 0;
+        overflow: hidden;
+      }
+
+      .mat-column-show,
+      .mat-column-delete {
+        button {
+          padding: 0;
+
+          .show-btn,
+          .delete-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 20px;
+            color: #0d5407;
+          }
+
+          .delete-btn {
+            color: #9a0a1a;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<div class="notebook-container">
+  <div class="notebook-create-block">
+    <div class="notebook-header">
+      <div class="notebook-header-block">
+        <div class="notebook-header-title">
+          <span>
+            Notebook
+          </span>
+        </div>
+
+        <div class="notebook-info-block" *ngIf="dataNotes.length > 0">
+          <button
+            mat-stroked-button
+            routerLink="/notes"
+          >
+            <div class="notebook-icon">
+              <mat-icon>list</mat-icon>
+              <span>Все записи</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notebook-text">
+      <form [formGroup]="textAreaForm">
+        <mat-form-field appearance="fill">
+          <textarea
+          rows="6"
+          matInput
+          placeholder="Введите текст"
+          name="notebook_text"
+          formControlName="notebook_text"
+          >
+
+          </textarea>
+        </mat-form-field>
+      </form>
+
+      <div class="notebook-btn">
+        <button
+          *ngIf="textAreaForm.get('notebook_text')?.value"
+          mat-flat-button
+          aria-label="Clear"
+          (click)="clear()"
+        >
+          <div class="notebook-icon">
+            <mat-icon>clear</mat-icon>
+            <span>Очистить</span>
+          </div>
+        </button>
+
+        <button
+          mat-flat-button
+          aria-label="Save"
+          [disabled]="!textAreaForm.get('notebook_text')?.value"
+          (click)="save()"
+        >
+          <div class="notebook-icon">
+            <mat-icon>add</mat-icon>
+            <span>Сохранить</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

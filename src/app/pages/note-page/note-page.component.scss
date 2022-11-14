@@ -1,0 +1,37 @@
+.notebook-container {
+  align-items: flex-start;
+
+  .notebook-note-wrapper {
+    width: 100%;
+
+    .notebook-note-block {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #228B22FF;
+      min-width: 350px;
+      margin: 15px 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+
+      .separator {
+        width: 100%;
+        height: 1px;
+        background: #228B22FF;
+      }
+
+      .note-create-date {
+        .note-create-date-txt {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 30px;
+          color: #0d5407;
+        }
+      }
+
+      .note-text {
+
+      }
+    }
+  }
+}
